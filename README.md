@@ -24,8 +24,8 @@
 ### Установка и запуск фронтенда
 
 ```bash
-git clone https://github.com/Dimes2212/frontend-trainee-assignment-autumn-2025.git
-cd frontend-trainee-assignment-autumn-2025/frontend
+git clone https://github.com/Dimes2212/avito_frontend.git
+cd avito_frontend/frontend
 npm install
 npm run dev
 ```
@@ -37,7 +37,7 @@ npm run dev
 ## 🖥 Запуск backend (API)
 
 ```bash
-cd ../backend
+cd ../tech-int3-server
 npm install
 npm start
 ```
