@@ -116,7 +116,7 @@ export default function StatsPage() {
     isSummaryLoading ||
     isActivityLoading ||
     isDecisionsLoading ||
-    isCategoriesLoading
+    isCategoriesLoading  // будет false, а не null, так как логическое или
 
   const isErrorAny =
     isSummaryError ||
@@ -124,7 +124,7 @@ export default function StatsPage() {
     isDecisionsError ||
     isCategoriesError
 
-  // 🔹 helper: красиво показываем среднее время проверки
+  
   const formatAvgReviewTime = (seconds: number) => {
     if (!seconds) return '—'
     if (seconds < 60) return `${seconds} с`
@@ -132,7 +132,7 @@ export default function StatsPage() {
     return `${minutes} мин`
   }
 
-  // 🔹 все хуки уже вызвали — дальше можно возвращать JSX
+  
   if (isLoadingAll && !summary) {
     return <Typography>Загрузка статистики…</Typography>
   }

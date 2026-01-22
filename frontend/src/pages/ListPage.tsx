@@ -33,10 +33,9 @@ const statusLabels: Record<StatusFilter, string> = {
   approved: 'Одобрено',
   rejected: 'Отклонено',
   draft: 'Черновик',
-}
+} // выбрал объекты а не енам потому поиск по ключам и следовательно O(1)
 
 export default function ListPage() {
-  // фильтры
   const [statusFilter, setStatusFilter] = useState<StatusFilter[]>([])
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
   const [search, setSearch] = useState<string>('')
@@ -82,7 +81,7 @@ export default function ListPage() {
 
   // 🔹 применение фильтров + сортировки
   const filteredAndSortedAds = useMemo(() => {
-    let result = [...safeAds]
+    let result = [...safeAds] //оператор спред
 
     // фильтр по статусу (множественный выбор)
     if (statusFilter.length > 0) {
@@ -158,7 +157,7 @@ export default function ListPage() {
 
   // пагинация по отфильтрованному списку
   const totalItems = filteredAndSortedAds.length
-  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE))
+  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE)) // округление вверх
   const currentPage = Math.min(page, totalPages)
 
   const pageAds = useMemo(() => {

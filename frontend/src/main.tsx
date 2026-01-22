@@ -1,20 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client' 
+import ReactDOM from 'react-dom/client'
 // React + создание корня приложения
 
-import { RouterProvider } from 'react-router-dom' 
+import { RouterProvider } from 'react-router-dom'
 // Роутинг (маршруты, переходы между страницами)
 
-import { ThemeProvider, CssBaseline, createTheme } from '@mui/material' 
+import { ThemeProvider, CssBaseline, createTheme } from '@mui/material'
 // Material UI: тема, базовые стили
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query' 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 // React Query: кэширование и управление запросами
 
-import { router } from './router.tsx' 
+import { router } from './router.tsx'
 // объект маршрутов приложения
 
-const queryClient = new QueryClient() 
+const queryClient = new QueryClient()
 // создаём кэш-клиент React Query
 
 // создаём Material UI тему

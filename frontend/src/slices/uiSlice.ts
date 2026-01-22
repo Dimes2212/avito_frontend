@@ -17,16 +17,27 @@ const initialState: UiState = {
   search: '',
 }
 
-const uiSlice = createSlice( {
+const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    setFilter: (s, a: PayloadAction<ModerationFilter>) => { s.filter = a.payload; s.page = 1 },
-    setPage: (s, a: PayloadAction<number>) => { s.page = a.payload },
-    setPerPage: (s, a: PayloadAction<number>) => { s.perPage = a.payload; s.page = 1 },
-    setSearch: (s, a: PayloadAction<string>) => { s.search = a.payload; s.page = 1 },
-  }
+    setFilter: (s, a: PayloadAction<ModerationFilter>) => {
+      s.filter = a.payload
+      s.page = 1
+    },
+    setPage: (s, a: PayloadAction<number>) => {
+      s.page = a.payload
+    },
+    setPerPage: (s, a: PayloadAction<number>) => {
+      s.perPage = a.payload
+      s.page = 1
+    },
+    setSearch: (s, a: PayloadAction<string>) => {
+      s.search = a.payload
+      s.page = 1
+    },
+  },
 })
 
 export const { setFilter, setPage, setPerPage, setSearch } = uiSlice.actions
-export default uiSlice.reducer            
+export default uiSlice.reducer
